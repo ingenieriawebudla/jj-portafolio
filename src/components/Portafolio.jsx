@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef, useCallback, CSSProperties } from "react";
-import { Mail, Linkedin, Github, ChevronDown, ExternalLink, ArrowRight, BookOpen, Users, Award, Briefcase, GraduationCap, Code, Layers, Target, TrendingUp, MapPin, Download, Menu, X, Sun, Moon } from "lucide-react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { Mail, Linkedin, Github, ChevronDown, ExternalLink, ArrowRight, BookOpen, Users, Award, Briefcase, GraduationCap, Code, Layers, Target, TrendingUp, Calendar, MapPin, Download, Menu, X, Sun, Moon } from "lucide-react";
 
 // ─── Intersection Observer Hook ───
 function useInView(options = {}) {
@@ -91,7 +91,7 @@ function Nav({ activeSection, darkMode, setDarkMode }) {
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
         <button onClick={() => scrollTo("hero")} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 8 }}>
           <span style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 700, color: "var(--accent)", letterSpacing: "-0.02em" }}>JJ</span>
-          <span style={{ fontFamily: "var(--font-display)", fontSize: 14, color: "var(--text-secondary)", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}>León</span>
+          <span style={{ fontFamily: "var(--font-display)", fontSize: 14, color: "var(--text-secondary)", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}>Leon</span>
         </button>
 
         {/* Desktop Nav */}
@@ -154,8 +154,8 @@ function Nav({ activeSection, darkMode, setDarkMode }) {
                 color: activeSection === l.id ? "var(--accent)" : "#ffffff", cursor: "pointer", textAlign: "center",
                 transition: "color 0.3s, transform 0.2s",
               }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = "var(--accent)"; e.currentTarget.style.transform = "scale(1.05)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = activeSection === l.id ? "var(--accent)" : "#ffffff"; e.currentTarget.style.transform = "none"; }}
+                onMouseEnter={(e) => { e.target.style.color = "var(--accent)"; e.target.style.transform = "scale(1.05)"; }}
+                onMouseLeave={(e) => { e.target.style.color = activeSection === l.id ? "var(--accent)" : "#ffffff"; e.target.style.transform = "none"; }}
               >
                 {l.label}
               </button>
@@ -248,12 +248,12 @@ function Hero() {
             fontFamily: "var(--font-display)", fontSize: "clamp(48px, 8vw, 96px)", fontWeight: 700,
             lineHeight: 1.05, letterSpacing: "-0.03em", color: "var(--text-primary)", margin: 0,
           }}>
-            Juan José{" "}
+            Juan Jose{" "}
             <span style={{
               background: "linear-gradient(135deg, var(--accent), var(--accent-secondary))",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
             }}>
-              León
+              Leon
             </span>
           </h1>
         </Reveal>
@@ -273,7 +273,7 @@ function Hero() {
             fontFamily: "var(--font-body)", fontSize: "clamp(16px, 1.8vw, 19px)", lineHeight: 1.7,
             color: "var(--text-tertiary)", maxWidth: 600, marginTop: 28, marginBottom: 40,
           }}>
-            MSc. Computer Science Engineer architecting enterprise learning programs that accelerate technical readiness across global teams. Expert at AI adoption, onboarding design, and knowledge management at scale.
+            MSc. Computer Science Engineer expert at architecting enterprise learning programs that accelerate technical readiness across global software development teams. Hands-on with Copilot, Glean, ChatGPT, and Claude.
           </p>
         </Reveal>
 
@@ -286,8 +286,8 @@ function Hero() {
                 fontSize: 15, fontWeight: 600, textDecoration: "none", border: "none", cursor: "pointer",
                 transition: "transform 0.2s, box-shadow 0.2s",
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 8px 30px var(--accent-glow)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}
+              onMouseEnter={(e) => { e.target.style.transform = "translateY(-2px)"; e.target.style.boxShadow = "0 8px 30px var(--accent-glow)"; }}
+              onMouseLeave={(e) => { e.target.style.transform = "none"; e.target.style.boxShadow = "none"; }}
             >
               View My Work <ArrowRight size={16} />
             </a>
@@ -298,8 +298,8 @@ function Hero() {
                 fontSize: 15, fontWeight: 600, textDecoration: "none", border: "1px solid var(--border)",
                 cursor: "pointer", transition: "border-color 0.3s, background 0.3s",
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--accent)"; e.currentTarget.style.background = "var(--card-hover)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.background = "transparent"; }}
+              onMouseEnter={(e) => { e.target.style.borderColor = "var(--accent)"; e.target.style.background = "var(--card-hover)"; }}
+              onMouseLeave={(e) => { e.target.style.borderColor = "var(--border)"; e.target.style.background = "transparent"; }}
             >
               <Download size={16} /> Resume
             </a>
@@ -313,10 +313,10 @@ function Hero() {
             gap: 32, marginTop: 80, paddingTop: 40, borderTop: "1px solid var(--border)",
           }}>
             {[
-              { n: 9, s: "+", label: "Years in L&D" },
-              { n: 2100, s: "+", label: "Students Taught" },
+              { n: 2100, s: "+", label: "Students Trained" },
               { n: 900, s: "", label: "Person Workforce" },
-              { n: 5, s: "+", label: "Partner Platforms" },
+              { n: 4, s: "", label: "AI Programs Founded" },
+              { n: 17, s: "+", label: "Years Teaching" },
             ].map((s, i) => (
               <div key={i}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 36, fontWeight: 700, color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
@@ -355,18 +355,18 @@ function About() {
           <div>
             <Reveal delay={0.1}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.02em", color: "var(--text-primary)", margin: "0 0 28px" }}>
-                People, technology,<br />
-                <span style={{ color: "var(--accent)" }}>and business outcomes.</span>
+                Building teams that<br />
+                <span style={{ color: "var(--accent)" }}>ship smarter, faster.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.75, color: "var(--text-secondary)", marginBottom: 20 }}>
-                I'm an MSc. Computer Science Engineer expert at architecting enterprise learning programs that accelerate technical readiness across global software development teams. At Verndale, I lead the design and delivery of onboarding, credentialing, and AI adoption initiatives for a nearly 900-person global workforce.
+                I lead the design and delivery of onboarding, credentialing, and AI adoption initiatives at Verndale, building scalable enablement programs that align engineering capabilities with strategic business goals across a nearly 900-person global workforce. I manage the AI enablement stack — Glean, ChatGPT, Claude, and Microsoft Copilot — building agents and workflow automations that expand L&D capacity.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.75, color: "var(--text-secondary)", marginBottom: 20 }}>
-                I've managed Glean, ChatGPT, Claude, and Microsoft Copilot to build AI agents and automations that expanded L&D capacity and supported scalable training delivery. As a full professor at UDLA, I've designed competency-based curriculum for 2,100+ students. Strong negotiator with platform partners and recognized across the Latin American and U.S. software development value chain.
+                Skilled at integrating training and knowledge management across merged and acquired companies. Strong negotiation skills with stakeholders and technology platform partners, with a recognized network across the Latin American and U.S. software development value chain. I also teach Web Engineering at UDLA, where I've designed competency-based curriculum for over 2,100 students.
               </p>
             </Reveal>
             <Reveal delay={0.4}>
@@ -382,8 +382,8 @@ function About() {
               { icon: <Briefcase size={20} />, title: "Verndale", sub: "Senior Technical Trainer & L&D Program Lead", period: "Sep 2016 – Present", accent: true },
               { icon: <GraduationCap size={20} />, title: "UDLA", sub: "Professor of Web Engineering", period: "2008 – Present" },
               { icon: <Code size={20} />, title: "Oshyn Inc", sub: "Front End Developer", period: "2008 – 2010" },
-              { icon: <Award size={20} />, title: "MSc. Eng. Numeric Media", sub: "ESIEE Paris, France", period: "2006 – 2008" },
               { icon: <Code size={20} />, title: "Mazarine Digital", sub: "Interactive Developer · Paris", period: "2007 – 2008" },
+              { icon: <Award size={20} />, title: "MSc. Eng. Numeric Media", sub: "ESIEE Paris, France", period: "2006 – 2008" },
               { icon: <Layers size={20} />, title: "Mindsoft", sub: "Co-founder", period: "2003 – 2016" },
             ].map((item, i) => (
               <Reveal key={i} delay={0.15 * i}>
@@ -419,51 +419,51 @@ function Work() {
   const projects = [
     {
       id: 1, span: "wide",
-      tag: "AI ENABLEMENT", title: "Enterprise AI Adoption Programs",
-      desc: "Founded and led four internal AI adoption programs focused on practical GenAI use cases, project-based learning, creative applications, and responsible adoption across technical and business teams. Produced user guides, FAQs, and training materials to support ongoing enablement.",
-      metrics: [{ v: "4", l: "AI Programs" }, { v: "~900", l: "Team Members" }, { v: "Glean, Copilot, Claude", l: "AI Stack" }],
-      color: "var(--accent)",
-      icon: <Award size={24} />,
+      tag: "AI ENABLEMENT", title: "AI Adoption Programs & Agent Building",
+      desc: "Managed the AI enablement stack including Glean, ChatGPT, Claude, and Microsoft Copilot. Founded and led four internal AI adoption programs focused on practical GenAI use cases, project-based learning, creative applications, and responsible adoption. Built several AI agents and workflow automations that expanded L&D capacity and improved onboarding operations.",
+      metrics: [{ v: "4", l: "AI Programs Founded" }, { v: "4+", l: "AI Platforms" }, { v: "Agents", l: "Built & Deployed" }],
+      color: "#a855f7",
+      icon: <Code size={24} />,
     },
     {
       id: 2, span: "normal",
       tag: "ONBOARDING", title: "Global Onboarding Architecture",
-      desc: "Designed and launched a global onboarding program with structured pre-boarding, role-specific ramp plans, milestone checkpoints, and 30/60/90-day follow-ups to improve new-hire readiness and time-to-productivity across 4 countries.",
-      metrics: [{ v: "30/60/90", l: "Day Model" }, { v: "4", l: "Regions" }],
-      color: "var(--accent-secondary)",
+      desc: "Built Verndale's early-career, onboarding, and technical enablement architecture from the ground up — scaling role-based learning tracks, competency frameworks, and milestone checkpoints with structured pre-boarding, ramp plans, and 30/60/90-day follow-ups across a ~900-person workforce.",
+      metrics: [{ v: "~900", l: "Person Workforce" }, { v: "30/60/90", l: "Day Milestones" }],
+      color: "var(--accent)",
       icon: <Users size={24} />,
     },
     {
       id: 3, span: "normal",
-      tag: "CREDENTIALING", title: "Certification & Partnership Readiness",
-      desc: "Developed certification and credentialing programs that strengthened platform readiness and supported top-tier partner status across Sitecore Diamond, Optimizely Premier Platinum, Shopify Platinum, Webflow Premium and Salesforce Ridge.",
-      metrics: [{ v: "5", l: "Partner Tiers" }, { v: "Tiered", l: "Certs" }],
-      color: "#22c55e",
-      icon: <Target size={24} />,
+      tag: "CREDENTIALING", title: "Partner Certification Programs",
+      desc: "Developed certification and credentialing programs that strengthened platform readiness and supported top-tier partner status across Sitecore Diamond, Optimizely Premier Platinum, Shopify Platinum, Webflow Premium, and Salesforce Ridge.",
+      metrics: [{ v: "5", l: "Top-Tier Partners" }, { v: "Global", l: "Delivery Teams" }],
+      color: "var(--accent-secondary)",
+      icon: <Award size={24} />,
     },
     {
       id: 4, span: "wide",
       tag: "M&A INTEGRATION", title: "Acquisition L&D Integration",
-      desc: "Led L&D integration across multiple acquisitions using capability gap analysis, LMS-based learning paths, and credentialing frameworks to accelerate workforce readiness and operational continuity. Built program infrastructure from the ground up for each acquired company.",
-      metrics: [{ v: "0→1", l: "Program Build" }, { v: "Role-to-Skill", l: "Mapping" }, { v: "Multiple", l: "Acquisitions" }],
+      desc: "Led L&D integration across multiple acquisitions, using capability gap analysis, LMS-based learning paths, and credentialing frameworks to accelerate workforce readiness and operational continuity. Built program infrastructure from the ground up in each case.",
+      metrics: [{ v: "Multiple", l: "Acquisitions" }, { v: "Gap Analysis", l: "Led" }, { v: "LMS", l: "Learning Paths" }],
       color: "#f97316",
       icon: <Layers size={24} />,
     },
     {
       id: 5, span: "normal",
-      tag: "KNOWLEDGE MGMT", title: "Learning Technology Stack",
-      desc: "Managed the learning technology and AI enablement stack, including Glean, ChatGPT, Claude, and Microsoft Copilot. Built AI agents and workflow automations that expanded L&D capacity, improved onboarding operations, and supported scalable training delivery.",
-      metrics: [{ v: "6+", l: "AI Tools" }, { v: "Agents & Automation", l: "Enabled" }],
-      color: "#a855f7",
-      icon: <Code size={24} />,
+      tag: "ACADEMIA", title: "Web Engineering Curriculum (UDLA)",
+      desc: "Designed and delivered competency-based curriculum and learning experiences for over 2,100 students, grounding courses in adult learning principles. Developed scenario-based assessments including coding challenges, cloud configuration, and architectural decision-making.",
+      metrics: [{ v: "2,100+", l: "Students" }, { v: "17+", l: "Years Teaching" }],
+      color: "#22c55e",
+      icon: <BookOpen size={24} />,
     },
     {
       id: 6, span: "normal",
-      tag: "ACADEMICS", title: "UDLA Web Engineering Curriculum",
-      desc: "Designed and delivered competency-based curriculum and learning experiences for 2,100+ students, grounding courses in adult learning principles and modern software engineering practices with rigorous scenario-based assessments.",
-      metrics: [{ v: "2,100+", l: "Students" }, { v: "Competency-Based", l: "Design" }],
+      tag: "KNOWLEDGE MGMT", title: "Enablement Content & User Guides",
+      desc: "Produced user guides, FAQs, and training materials to support ongoing enablement and knowledge management. Built workflow automations with Power Automate, Glean agents, Claude Cowork agents, and ChatGPT agents integrated with Email, Slack, and Teams.",
+      metrics: [{ v: "Multi-Channel", l: "Integrations" }, { v: "Scalable", l: "Delivery" }],
       color: "#06b6d4",
-      icon: <BookOpen size={24} />,
+      icon: <Target size={24} />,
     },
   ];
 
@@ -480,7 +480,7 @@ function Work() {
 
         <Reveal delay={0.1}>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.02em", color: "var(--text-primary)", margin: "0 0 60px" }}>
-            Enterprise learning<br />at scale.
+            Programs that move<br />the needle.
           </h2>
         </Reveal>
 
@@ -538,12 +538,12 @@ function Work() {
 // ─── Expertise ───
 function Expertise() {
   const skills = [
-    { category: "AI & GenAI Tools", items: ["Claude (Certified)", "ChatGPT (Agent Builder)", "Glean (Agent Builder)", "Microsoft Copilot", "Synthesia", "Notebook LM", "Gamma", "Claude Code", "Claude Cowork"] },
-    { category: "LMS & Learning Tech", items: ["Moodle", "Rippling LMS", "Udemy", "Jira/Confluence", "Adoption Tracking", "Business Impact Reporting"] },
-    { category: "Workflow Automation", items: ["Microsoft Power Automate", "Glean Agents", "Claude Agents", "ChatGPT Agents", "Email/Slack/Teams Integrations"] },
-    { category: "Partner Platforms", items: ["Sitecore", "Optimizely", "Shopify", "Webflow", "Vercel", "Salesforce"] },
-    { category: "Content & Design", items: ["Short-form Video", "Adobe After Effects", "Adobe Premiere", "Adobe Audition", "Figma", "Photoshop", "Vercel"] },
-    { category: "Instructional Design", items: ["Adult Learning Principles", "Onboarding Design", "Performance-Based Assessment", "Content Lifecycle Management", "Rapid Prototyping", "Scrum", "Kanban"] },
+    { category: "AI & GenAI Tools", items: ["Claude (Certified)", "Claude Code", "Claude Cowork", "ChatGPT (Agent Builder)", "Glean (Agent Builder)", "Synthesia", "Notebook LM", "Gamma", "NapkinAI", "Sora", "Microsoft Copilot"] },
+    { category: "LMS & Learning Tech", items: ["Moodle", "Rippling LMS", "Udemy", "Jira/Confluence Tracking", "Adoption & Completion Reporting", "Business Impact Reporting"] },
+    { category: "Workflow Automation", items: ["Power Automate", "Glean Agents", "Claude Cowork Agents", "ChatGPT Agents", "Email Integrations", "Slack & Teams Integrations"] },
+    { category: "Instructional Design", items: ["Adult Learning Principles", "Onboarding Program Design", "Performance-Based Assessment", "Content Lifecycle Mgmt", "Rapid Prototyping"] },
+    { category: "Content & Design", items: ["Short-Form Video", "After Effects", "Premiere", "Audition", "Figma", "Photoshop", "Vercel"] },
+    { category: "Project & Stakeholder Mgmt", items: ["Jira", "Confluence", "Trello", "Scrum", "Kanban", "Cross-Functional Coordination", "Timeline Management"] },
   ];
 
   return (
@@ -558,7 +558,7 @@ function Expertise() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.02em", color: "var(--text-primary)", margin: "0 0 60px" }}>
-            Where learning meets<br />technology.
+            Where learning meets<br />engineering.
           </h2>
         </Reveal>
 
@@ -574,8 +574,8 @@ function Expertise() {
                       background: "var(--tag-bg)", color: "var(--text-secondary)", letterSpacing: "0.02em",
                       transition: "color 0.2s, background 0.2s", cursor: "default",
                     }}
-                      onMouseEnter={(e) => { e.currentTarget.style.color = "var(--accent)"; e.currentTarget.style.background = "var(--tag-hover)"; }}
-                      onMouseLeave={(e) => { e.currentTarget.style.color = "var(--text-secondary)"; e.currentTarget.style.background = "var(--tag-bg)"; }}
+                      onMouseEnter={(e) => { e.target.style.color = "var(--accent)"; e.target.style.background = "var(--tag-hover)"; }}
+                      onMouseLeave={(e) => { e.target.style.color = "var(--text-secondary)"; e.target.style.background = "var(--tag-bg)"; }}
                     >
                       {item}
                     </span>
@@ -647,8 +647,8 @@ function BlogPost({ post, onClose }) {
           <div style={{ display: "flex", alignItems: "center", gap: 12, paddingBottom: 32, marginBottom: 40, borderBottom: "1px solid var(--border)" }}>
             <div style={{ width: 36, height: 36, borderRadius: "50%", background: "linear-gradient(135deg, var(--accent), var(--accent-secondary))", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, color: "var(--bg-primary)" }}>JJ</div>
             <div>
-              <div style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, color: "var(--text-primary)" }}>Juan José León Guerrero</div>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--text-tertiary)" }}>Enterprise L&D Lead · Verndale</div>
+              <div style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, color: "var(--text-primary)" }}>Juan Jose Leon</div>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--text-tertiary)" }}>Senior Technical Trainer & L&D Program Lead · Verndale</div>
             </div>
           </div>
 
@@ -690,67 +690,82 @@ function Blog() {
 
   const posts = [
     {
-      title: "Enterprise AI Adoption: From Proof of Concept to Organizational Culture",
-      tag: "AI ADOPTION", date: "Mar 2026", read: "9 min", color: "var(--accent)",
+      title: "Building Certification Programs from Scratch: A 0-to-1 Playbook",
+      tag: "CREDENTIALING", date: "Mar 2026", read: "8 min", color: "var(--accent)",
       body: [
-        { type: "p", text: "The difference between organizations that successfully embed AI into their operations and those that treat it as a one-off experiment comes down to one thing: culture. I've led four separate AI adoption programs at Verndale, and the key insight isn't about the tools — it's about how you structure the learning around them." },
-        { type: "h2", text: "Start with Use Cases, Not Tools" },
-        { type: "p", text: "The instinct is to say 'we're using Claude now, here's a training session.' Resist it. Begin by identifying the actual problems your teams face day-to-day. For an L&D team, it might be accelerating course outline generation. For engineering, it might be faster code review feedback. For design, faster mockup iteration. The tool serves the use case, not the other way around." },
-        { type: "quote", text: "AI adoption fails when you push the tool. It succeeds when you solve the problem and the tool becomes the obvious solution." },
-        { type: "h2", text: "Project-Based Learning Works Better Than Abstract Workshops" },
-        { type: "p", text: "A 90-minute workshop on prompt engineering is forgettable. A two-week project where teams apply Claude to their real workflow creates muscle memory. We structured our programs around concrete deliverables — a content outline generated entirely using AI, a design exploration using ChatGPT for ideation, an automation workflow built in Power Automate. The learning happened through doing." },
-        { type: "h2", text: "Responsible Adoption Isn't a Separate Track" },
-        { type: "p", text: "I produced user guides and FAQs that embedded responsible AI usage into the everyday workflow. Not as a compliance box to check, but as practical guidance: when does relying on AI output create risk? Where do you need human review? How do you spot hallucinations? These conversations happen naturally when you're working on actual projects." },
+        { type: "p", text: "Most organizations don't realize they need a certification program until they're already losing partner tier status or watching new hires flounder for months without clear competency benchmarks. Having built credentialing systems from zero multiple times, I've learned that the architecture decisions you make in the first two weeks determine whether the program scales or collapses under its own weight." },
+        { type: "h2", text: "Start with the Business Case, Not the Content" },
+        { type: "p", text: "The instinct is to start writing training material. Resist it. Begin by mapping the certification program to business outcomes: partner tier requirements, client delivery quality, employee retention, and time-to-productivity. If you can't draw a direct line from a credential to revenue or risk mitigation, it's not a certification — it's a nice-to-have." },
+        { type: "p", text: "At Verndale, I began by auditing every partner program requirement across Sitecore, Optimizely, Shopify, Webflow, and Vercel. Each vendor has different credentialing expectations, renewal cycles, and tier thresholds. The framework had to accommodate all of them without creating five separate bureaucracies." },
+        { type: "h2", text: "Define Tiers Before You Define Content" },
+        { type: "p", text: "A flat certification structure — where everyone either has the badge or doesn't — creates no growth incentive. Instead, design tiered levels that map to role progression: foundational (new hires), practitioner (mid-level), and expert (senior/architect). Each tier should have clear criteria for entry, maintenance, and renewal." },
+        { type: "quote", text: "The biggest mistake I see in certification programs is treating them as a checkbox exercise. Credentials should mean something — they should predict on-the-job performance." },
+        { type: "h2", text: "Budget-Aware Credential Allocation" },
+        { type: "p", text: "Vendor certifications cost money — exam fees, training licenses, study time. I introduced certification program economics into the planning process: forecasting annual credential spend, prioritizing certifications that directly impact partner tier status, and building a renewal calendar that prevents last-minute scrambles. This shifted the conversation from 'can we afford to certify people?' to 'can we afford not to?'" },
+        { type: "h2", text: "Operationalize with Lifecycle Tracking" },
+        { type: "p", text: "A certification without expiration tracking is a ticking time bomb. I built lifecycle management processes using Jira and Confluence that track credential status across the entire ~900-person workforce spanning the U.S., Canada, LATAM, and contractor populations. Automated reminders, renewal windows, and manager dashboards keep the system running without constant manual intervention." },
+        { type: "h2", text: "The Payoff" },
+        { type: "p", text: "When the program matures, it becomes self-reinforcing: engineers see credentials as career currency, managers use them for staffing decisions, and the business maintains partner tier status without emergency certification drives. The key is treating it as infrastructure, not a project — something that runs continuously, not something you launch and forget." },
+      ],
+    },
+    {
+      title: "How AI Tools Are Transforming L&D Content Development",
+      tag: "AI + LEARNING", date: "Feb 2026", read: "6 min", color: "var(--accent-secondary)",
+      body: [
+        { type: "p", text: "The L&D field is experiencing a fundamental shift in how content gets created. Over the past year, I've integrated six AI tools into my daily workflow — not as experiments, but as production systems that have measurably changed how fast and how well training content reaches learners." },
+        { type: "h2", text: "The Tools I Actually Use (and Why)" },
+        { type: "p", text: "There's a difference between tools you demo at a conference and tools you open every morning. My daily stack: Claude for complex content structuring, curriculum design, and assessment writing; Synthesia for scalable video content that doesn't require booking a studio; Notebook LM for synthesizing SME interviews into structured learning objectives; and Gamma for rapid slide deck prototyping when stakeholders need to see something visual before committing to a full build." },
+        { type: "h2", text: "Augmentation, Not Replacement" },
+        { type: "quote", text: "AI doesn't replace instructional designers — it replaces the blank page. The hardest part of content development is the first draft, and that's exactly where AI excels." },
+        { type: "p", text: "I frame AI adoption carefully within my organization. The goal is never to eliminate roles but to compress the cycle from 'SME brain dump' to 'learner-ready content.' A certification module that took two weeks to develop can now reach first draft in two days — but it still needs human review for technical accuracy, cultural nuance, and pedagogical integrity." },
+        { type: "h2", text: "Personalizing Learning Journeys at Scale" },
+        { type: "p", text: "The most exciting application isn't content creation — it's content personalization. Using AI to analyze learner assessment data and recommend targeted reinforcement paths means that two engineers preparing for the same Sitecore certification might follow different study paths based on their existing knowledge gaps. This was impossible to do manually for a globally distributed workforce." },
+        { type: "h2", text: "Responsible AI in Learning Design" },
+        { type: "p", text: "I coordinate thought-leadership sessions that reinforce responsible AI adoption across our teams. This means being transparent about when content is AI-assisted, maintaining human review gates for anything that touches certification assessments, and ensuring AI tools don't inadvertently introduce bias into learning materials. Getting certified in AI Fluency frameworks gave me the vocabulary to have these conversations with leadership and engineering alike." },
+        { type: "h2", text: "What's Next" },
+        { type: "p", text: "The next frontier is AI-generated scenario-based assessments — dynamically creating practice environments that adapt to the learner's skill level in real-time. We're not there yet, but the foundation we've built with structured content and competency mapping makes it achievable within the next 12–18 months." },
+      ],
+    },
+    {
+      title: "Partner Enablement at Scale: Lessons from 5 Platform Ecosystems",
+      tag: "ENABLEMENT", date: "Jan 2026", read: "7 min", color: "#22c55e",
+      body: [
+        { type: "p", text: "When your organization is a partner across five different technology platforms — each with its own certification requirements, training resources, competency frameworks, and tier thresholds — enablement becomes a logistics challenge as much as a learning design challenge. Here's what I've learned managing this complexity at Verndale." },
+        { type: "h2", text: "Every Platform Thinks It's the Only Platform" },
+        { type: "p", text: "Sitecore, Optimizely, Shopify, Webflow, and Vercel each provide their own partner enablement programs. Each assumes your team is dedicated exclusively to their ecosystem. The reality? Engineers move between platforms based on client needs. A developer might work on a Sitecore project in Q1 and a Shopify build in Q3. Your enablement program has to account for this fluidity." },
+        { type: "h2", text: "The Unified Framework Approach" },
+        { type: "p", text: "Rather than running five parallel training programs, I designed a unified credentialing framework with a consistent structure: foundational platform knowledge, hands-on implementation skills, and architectural decision-making. The content varies by platform, but the progression model, assessment format, and tracking infrastructure are consistent." },
+        { type: "quote", text: "The goal isn't to make every engineer an expert in every platform. It's to make every engineer competent in their assigned platform and literate across the ecosystem." },
+        { type: "h2", text: "Coordinating with Credentialing Vendors" },
+        { type: "p", text: "Each vendor has a partner team that cares deeply about your certification numbers — because those numbers determine your partner tier, which determines the leads, support, and co-marketing resources they send your way. I maintain direct relationships with each vendor's enablement team, aligning our internal training calendar with their certification exam windows, beta programs, and content updates." },
+        { type: "h3", text: "Timing Matters More Than You Think" },
+        { type: "p", text: "Platform vendors release major updates on their own schedule. When Optimizely launches a new feature set, the certification exam changes within 60 days. If your team isn't tracking these cycles, they study for an exam that no longer exists. I build a rolling calendar that maps vendor release cycles to internal training sprints." },
+        { type: "h2", text: "Measuring What Matters" },
+        { type: "p", text: "Partner tier status is the ultimate metric — it's binary and visible. But underneath it, I track certification velocity (time from enrollment to passing), renewal compliance rates, and the correlation between platform credentials and client engagement outcomes. These secondary metrics tell me whether the program is healthy before tier status becomes at risk." },
+        { type: "h2", text: "The Human Side" },
+        { type: "p", text: "Technical enablement fails when it ignores motivation. Engineers don't study for certifications because you told them to — they study because the credential advances their career, earns them project assignments they want, or gives them recognition among peers. The enablement program has to serve the learner's goals, not just the organization's partner requirements." },
+      ],
+    },
+    {
+      title: "L&D Integration After M&A: Building Training Infrastructure for Acquired Teams",
+      tag: "M&A STRATEGY", date: "Dec 2025", read: "9 min", color: "#f97316",
+      body: [
+        { type: "p", text: "Acquiring a company is a business transaction. Integrating that company's people into your learning and development infrastructure is something else entirely — it's a human systems challenge that touches identity, competence, belonging, and career trajectory. I've led L&D integration for acquired companies multiple times, and each one taught me something the last one didn't." },
+        { type: "h2", text: "Day Zero: What You Don't Know" },
+        { type: "p", text: "The acquisition due diligence covers financials, client contracts, and technology stack. It almost never covers the acquired team's existing training maturity, skill distribution, or learning culture. On day one of integration, I face a workforce I've never met, using tools I may not know, with competency levels I can't yet assess. The first task isn't training — it's discovery." },
+        { type: "h2", text: "The Discovery Framework" },
+        { type: "p", text: "I run a structured discovery process: map every role in the acquired organization to our existing competency framework, identify gaps between their current skills and our delivery standards, and interview managers to understand how the team has historically learned and developed. This produces a heat map of where the integration effort needs to focus." },
+        { type: "quote", text: "Integration isn't about making the acquired team 'like us.' It's about building a shared foundation while preserving the strengths they bring." },
+        { type: "h2", text: "Building from the Ground Up" },
+        { type: "p", text: "In every acquisition I've supported, the L&D infrastructure had to be built from scratch. This means defining core training requirements that apply to the entire combined organization, creating role-specific learning paths that account for the acquired team's starting point, enrolling people in certification programs with realistic timelines, and establishing delivery standards that both legacy and acquired teams can meet." },
+        { type: "h3", text: "The 30/60/90 Day Model" },
+        { type: "p", text: "I structure integration around clear milestones. By day 30, the acquired team should understand our tools, processes, and communication norms. By day 60, they should be enrolled in relevant certification tracks and participating in ongoing enablement programs. By day 90, they should be contributing to client work at expected quality standards. Each milestone has defined readiness criteria — not vague aspirations." },
+        { type: "h2", text: "The Role-to-Skill Mapping Challenge" },
+        { type: "p", text: "Acquired companies use different titles, different role definitions, and different career ladders. A 'Senior Developer' at the acquired company might map to a mid-level role in our framework, or vice versa. The skill mapping process has to be transparent and respectful — people's professional identities are attached to their titles. I present it as an alignment exercise, not a demotion risk." },
+        { type: "h2", text: "Cross-Cultural Considerations" },
+        { type: "p", text: "When the acquisition spans geographies — which it has in my experience across U.S., Canada, and LATAM teams — the integration has to account for language preferences, time zone constraints on live training, cultural attitudes toward certification (mandatory vs. aspirational), and local labor norms around professional development time. A one-size-fits-all integration plan guarantees failure in at least one region." },
         { type: "h2", text: "What Success Looks Like" },
-        { type: "p", text: "When the organization matures past the adoption phase, AI becomes invisible — not because people stop using it, but because it's integrated into how work gets done. You don't hear 'I used Claude to write this' anymore. You hear 'this document took half the time because we had better starting material to work from.' That's when you know the adoption succeeded." },
-      ],
-    },
-    {
-      title: "Building Onboarding Programs That Actually Predict Job Success",
-      tag: "ONBOARDING", date: "Feb 2026", read: "8 min", color: "var(--accent-secondary)",
-      body: [
-        { type: "p", text: "Most onboarding programs are designed backward — they start with the question 'what does the company want to teach' instead of 'what does the new hire need to be productive?' I've built global onboarding infrastructure for a 900-person workforce, and the architecture that works is one that aligns with how adults actually learn." },
-        { type: "h2", text: "The 30/60/90 Framework" },
-        { type: "p", text: "I structure every onboarding journey with explicit milestones. By day 30, a new hire should understand the company culture, tools, and communication norms. By day 60, they should be actively contributing to projects at expected quality levels. By day 90, they should be independent — no longer needing check-ins about how to do their job. Each milestone has defined readiness criteria, not vague aspirations." },
-        { type: "h2", text: "Pre-Boarding Is Where Outcomes Compound" },
-        { type: "p", text: "The week before someone's first day is the highest-ROI time to invest. We send prep materials, set up their development environment, introduce them to key stakeholders asynchronously, and give them reading so they arrive on day one with context, not blank-slate confusion. This costs almost nothing to do right and eliminates the first-week ramp time that normally just wastes everyone's time." },
-        { type: "quote", text: "A new hire who arrives prepared and oriented gets productive 2-3 weeks faster than one who shows up and starts from scratch." },
-        { type: "h2", text: "Role-Specific Learning Paths Matter" },
-        { type: "p", text: "An engineer's first 90 days are not the same as a project manager's. We built role-specific ramp plans that account for technical onboarding, team integration, project handoff, and cultural alignment. The shared foundation is consistent, but the path diverges based on what that role actually needs to do." },
-        { type: "h2", text: "Measure What Matters" },
-        { type: "p", text: "I track new-hire readiness using concrete metrics: time-to-first-project-contribution, quality of work at 60 days, manager confidence in independence at 90 days, and retention at the 6-month and 1-year marks. These aren't vanity metrics — they predict whether the onboarding actually worked." },
-      ],
-    },
-    {
-      title: "Certification Programs as Career Currency",
-      tag: "CREDENTIALING", date: "Jan 2026", read: "7 min", color: "#22c55e",
-      body: [
-        { type: "p", text: "Certifications live in an uncomfortable space. They're either the most meaningless credential (checkbox for tier status) or the most valuable career asset (proof of mastery). The difference is how you design them. I've built certification programs that landed in the second category." },
-        { type: "h2", text: "Tiered Credentials Drive Engagement" },
-        { type: "p", text: "A binary certification (you have it or you don't) creates no growth incentive beyond the initial achievement. Instead, design tiers: foundational (demonstrates basic competency), practitioner (hands-on application), expert (architectural decisions). Each tier has clear entry criteria, practical assessments, and business value. Engineers pursue the next tier because it opens new project types, not because management said so." },
-        { type: "h2", text: "Align with Platform Expectations" },
-        { type: "p", text: "Each technology vendor (Sitecore, Optimizely, Shopify, etc.) has different certification structures and update cycles. I built a unified framework that accommodates all of them without creating five separate bureaucracies. The structure is consistent, the content adapts to each platform's requirements." },
-        { type: "h2", text: "Renewal Cycles Are Infrastructure, Not Projects" },
-        { type: "p", text: "The moment a certification ships is day one of the renewal cycle. If you don't track expirations, plan renewal windows, and build time for recertification into your team's capacity, your credentials will silently become outdated. I operationalized this with automated reminders, manager dashboards, and a rolling calendar that prevents last-minute cramming." },
-        { type: "quote", text: "Credentials only mean something if they stay current. That's not a one-time project, it's ongoing infrastructure." },
-      ],
-    },
-    {
-      title: "L&D Integration in Acquired Companies: The First 90 Days",
-      tag: "M&A INTEGRATION", date: "Dec 2025", read: "10 min", color: "#f97316",
-      body: [
-        { type: "p", text: "When your company acquires another organization, the learning and development infrastructure isn't an afterthought — it's the backbone of integration. I've led multiple L&D integration efforts, and the pattern that works is deliberate, structured, and focused on early wins." },
-        { type: "h2", text: "Day One: Discovery, Not Onboarding" },
-        { type: "p", text: "The acquired team is full of competent people who know how to do their jobs. They just don't know how you do yours. The first priority isn't to teach them everything — it's to understand where they are so you can align them efficiently. We run structured discovery: map roles to your competency framework, identify the biggest gaps, interview managers about the team's learning culture." },
-        { type: "h2", text: "Days 1-30: Foundations and Belonging" },
-        { type: "p", text: "In the first month, focus on three things: shared tools and processes, company culture and values, and creating early wins where the acquired team contributes visibly. Don't try to teach them your entire engineering standard in week one. Give them enough to be productive, then let them learn by doing." },
-        { type: "h3", text: "Make the Tools Visible, Not the Jargon" },
-        { type: "p", text: "The acquired team is going to encounter Jira, Confluence, Slack, and a dozen other tools they may not have used before. Don't assume they'll figure it out. Provide structured onboarding to the tools, not lectures about your process philosophy. Let them experience the benefits, then explain the thinking behind it." },
-        { type: "h2", text: "Days 30-60: Capability Alignment" },
-        { type: "p", text: "Now you focus on skill gaps. Enroll the team in relevant certification tracks, pair them with internal mentors for hands-on learning, and start assigning them to projects where they can apply new skills immediately. This is where you build credibility — they see that the learning path actually prepares them for the work." },
-        { type: "h2", text: "Days 60-90: Independence and Ownership" },
-        { type: "p", text: "By day 90, the acquired team should be operating with minimal L&D support. They understand the standards, they're pursuing their own professional development, and they're contributing at expected quality levels. Your job at this point is to maintain the infrastructure, not to manually support each person." },
-        { type: "quote", text: "The integration is complete when you can no longer tell who was the legacy organization and who was acquired. That's when the infrastructure you built actually worked." },
+        { type: "p", text: "The integration is complete when you can no longer tell which team members are 'legacy' and which are 'acquired.' They share the same credentials, follow the same learning paths, and operate at the same delivery standards. The infrastructure you built doesn't just serve the current integration — it becomes the playbook for the next acquisition." },
       ],
     },
   ];
@@ -831,7 +846,7 @@ function Contact() {
         </Reveal>
         <Reveal delay={0.2}>
           <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.7, color: "var(--text-secondary)", maxWidth: 500, margin: "0 auto 48px" }}>
-            Exploring roles in Enterprise L&D, AI Adoption, and Knowledge Management at forward-thinking organizations.
+            Currently exploring roles in Enterprise L&D, AI Enablement, User Onboarding, and Knowledge Management at global technology organizations.
           </p>
         </Reveal>
         <Reveal delay={0.3}>
@@ -839,7 +854,7 @@ function Contact() {
             {[
               { icon: <Mail size={18} />, label: "Email", href: "mailto:juanjoleong@gmail.com", color: "var(--accent)" },
               { icon: <Linkedin size={18} />, label: "LinkedIn", href: "https://linkedin.com/in/juanjoleong", color: "#0a66c2" },
-              { icon: <Github size={18} />, label: "GitHub", href: "https://github.com/ingenieriawebudla", color: "var(--text-primary)" },
+              { icon: <Github size={18} />, label: "GitHub", href: "#", color: "var(--text-primary)" },
             ].map((link, i) => (
               <a
                 key={i}
@@ -874,7 +889,7 @@ function Footer() {
     <footer style={{ padding: "40px 24px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
         <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--text-tertiary)" }}>
-          © 2026 Juan José León Guerrero. Built with React & Vite.
+          © 2026 Juan Jose Leon. Built with React & Vite.
         </span>
         <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--text-tertiary)" }}>
           Designed with purpose.
@@ -954,7 +969,7 @@ export default function Portfolio() {
       minHeight: "100vh",
       overflowX: "hidden",
       transition: "background 0.4s, color 0.4s",
-    } as CSSProperties}>
+    }}>
       {/* Font imports */}
       <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
