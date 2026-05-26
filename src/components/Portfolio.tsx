@@ -58,7 +58,15 @@ function useInView(options = {}) {
 }
 
 // ─── Animated Counter ───
-function Counter({ end, suffix = "", duration = 2000 }: { end: number; suffix?: string; duration?: number }) {
+function Counter({
+  end,
+  suffix = "",
+  duration = 2000,
+}: {
+  end: number;
+  suffix?: string;
+  duration?: number;
+}) {
   const [count, setCount] = useState(0);
   const [ref, inView] = useInView();
   useEffect(() => {
@@ -83,7 +91,19 @@ function Counter({ end, suffix = "", duration = 2000 }: { end: number; suffix?: 
 }
 
 // ─── Reveal Wrapper ───
-function Reveal({ children, delay = 0, className = "", direction = "up", style }: { children: React.ReactNode; delay?: number; className?: string; direction?: string; style?: React.CSSProperties }) {
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+  direction = "up",
+  style,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+  direction?: string;
+  style?: React.CSSProperties;
+}) {
   const [ref, inView] = useInView();
   const transforms: Record<string, string> = {
     up: "translateY(40px)",
@@ -109,7 +129,15 @@ function Reveal({ children, delay = 0, className = "", direction = "up", style }
 }
 
 // ─── Navigation ───
-function Nav({ activeSection, darkMode, setDarkMode }: { activeSection: string; darkMode: boolean; setDarkMode: React.Dispatch<React.SetStateAction<boolean>> }) {
+function Nav({
+  activeSection,
+  darkMode,
+  setDarkMode,
+}: {
+  activeSection: string;
+  darkMode: boolean;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const links = [
@@ -316,8 +344,10 @@ function Nav({ activeSection, darkMode, setDarkMode }: { activeSection: string; 
                   transition: "color 0.3s, transform 0.2s",
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = "var(--accent)";
-                  (e.currentTarget as HTMLElement).style.transform = "scale(1.05)";
+                  (e.currentTarget as HTMLElement).style.color =
+                    "var(--accent)";
+                  (e.currentTarget as HTMLElement).style.transform =
+                    "scale(1.05)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLElement).style.color =
@@ -560,7 +590,8 @@ function Hero() {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow = "0 8px 30px var(--accent-glow)";
+                e.currentTarget.style.boxShadow =
+                  "0 8px 30px var(--accent-glow)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "none";
@@ -1763,7 +1794,14 @@ function BlogPost({ post, onClose }: { post: Post; onClose: () => void }) {
   );
 }
 
-type Post = { title: string; tag: string; date: string; read: string; color: string; body: { type: string; text: string }[] };
+type Post = {
+  title: string;
+  tag: string;
+  date: string;
+  read: string;
+  color: string;
+  body: { type: string; text: string }[];
+};
 
 // ─── Blog / Insights ───
 function Blog() {
@@ -2390,17 +2428,19 @@ export default function Portfolio() {
 
   return (
     <div
-      style={{
-        ...theme,
-        "--font-display": "'Sora', sans-serif",
-        "--font-body": "'DM Sans', sans-serif",
-        "--font-mono": "'JetBrains Mono', monospace",
-        background: "var(--bg-primary)",
-        color: "var(--text-primary)",
-        minHeight: "100vh",
-        overflowX: "hidden",
-        transition: "background 0.4s, color 0.4s",
-      } as React.CSSProperties}
+      style={
+        {
+          ...theme,
+          "--font-display": "'Sora', sans-serif",
+          "--font-body": "'DM Sans', sans-serif",
+          "--font-mono": "'JetBrains Mono', monospace",
+          background: "var(--bg-primary)",
+          color: "var(--text-primary)",
+          minHeight: "100vh",
+          overflowX: "hidden",
+          transition: "background 0.4s, color 0.4s",
+        } as React.CSSProperties
+      }
     >
       {/* Font imports */}
       <link
