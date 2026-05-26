@@ -1648,7 +1648,7 @@ function BlogPost({ post, onClose }: { post: Post; onClose: () => void }) {
                   color: "var(--text-primary)",
                 }}
               >
-                Juan José León Guerrero
+                Juan José León
               </div>
               <div
                 style={{
@@ -2351,7 +2351,7 @@ function Footer() {
             color: "var(--text-tertiary)",
           }}
         >
-          © 2026 Juan José León Guerrero. Built with React & Next.js.
+          © 2026 Juan José León.
         </span>
         <span
           style={{
