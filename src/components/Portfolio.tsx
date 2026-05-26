@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, CSSProperties } from "react";
 import {
   Mail,
   Linkedin,
@@ -15,7 +15,6 @@ import {
   Layers,
   Target,
   TrendingUp,
-  Calendar,
   MapPin,
   Download,
   Menu,
@@ -2356,7 +2355,7 @@ export default function Portfolio() {
           minHeight: "100vh",
           overflowX: "hidden",
           transition: "background 0.4s, color 0.4s",
-        } as React.CSSProperties
+        } as CSSProperties
       }
     >
       {/* Font imports */}
