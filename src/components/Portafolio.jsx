@@ -889,7 +889,7 @@ function Footer() {
     <footer style={{ padding: "40px 24px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
         <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--text-tertiary)" }}>
-          © 2026 Juan Jose Leon. Built with React & Vite.
+          © 2026 Juan Jose Leon.
         </span>
         <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--text-tertiary)" }}>
           Designed with purpose.
